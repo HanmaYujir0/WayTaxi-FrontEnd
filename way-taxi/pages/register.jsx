@@ -64,6 +64,7 @@ const register = () => {
     }
   };
 
+  
   return (
     <div className={styles.login}>
       <div className={styles.login_block}>
