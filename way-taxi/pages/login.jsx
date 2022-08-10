@@ -16,14 +16,6 @@ const login = () => {
     setPassword("")
   }
 
-  const changeName = (e) => {
-    setName(e.target.value);
-  };
-
-  const changeSurname = (e) => {
-    setSurname(e.target.value);
-  };
-
   const changeEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -33,10 +25,6 @@ const login = () => {
   };
   
 
-  const changePhone = (e) => {
-    setPhone(e.target.value);
-  };
-
   return (
     <div className={styles.login}>
       <div className={styles.login_block}>
@@ -45,13 +33,24 @@ const login = () => {
         </div>
         <form className={styles.inputs}>
           <div className={styles.group}>
-            <input required="" type="text" className={styles.input} value={email}/>
+            <input 
+            required="" 
+            type="text" 
+            className={styles.input} 
+            value={email} 
+            onChange={changeEmail}/>
             <span className={styles.highlight}></span>
             <span className={styles.bar}></span>
             <label>Email</label>
           </div>
           <div className={styles.group}>
-            <input required="" type="password" className={styles.input} value={password} />
+            <input 
+            required="" 
+            type="password" 
+            className={styles.input} 
+            value={password} 
+            onChange={changePassword} 
+            />
             <span className={styles.highlight}></span>
             <span className={styles.bar}></span>
             <label>Password</label>
