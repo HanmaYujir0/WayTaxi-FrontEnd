@@ -1,3 +1,4 @@
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useEffect } from "react";
@@ -147,3 +148,4 @@ export const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+
