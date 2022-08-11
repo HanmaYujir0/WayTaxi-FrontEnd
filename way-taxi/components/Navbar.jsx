@@ -20,14 +20,14 @@ const Header = () => {
                         <FiChevronDown className={styles.icon}/>
                         <ul className={styles.sub_menu_links}>
                             <li>
-                                <Link href="#">
+                                <Link href="/orders">
                                      <a>История заказов</a>
                                 </Link>
                                 <AiOutlineRight fontSize={'12'}/>
                             </li>
                             <li>
-                                <Link href="#">
-                                     <a>Написать в поддержку</a>
+                                <Link href="/ratingComponent">
+                                     <a>Рейтинг</a>
                                 </Link>
                                 <AiOutlineRight fontSize={'12'}/>
                             </li>

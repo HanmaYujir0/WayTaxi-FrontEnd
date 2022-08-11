@@ -1,18 +1,20 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { logining } from "../features/userSlice";
 import styles from "../styles/Login.module.css";
 
 const login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const changeName = (e) => {
-    setName(e.target.value);
-  };
+  const dispatch = useDispatch()
 
-  const changeSurname = (e) => {
-    setSurname(e.target.value);
-  };
+  const handleSigning = () => {
+    dispatch(logining({ email, password })),
+    setEmail(""),
+    setPassword("")
+  }
 
   const changeEmail = (e) => {
     setEmail(e.target.value);
@@ -21,10 +23,7 @@ const login = () => {
   const changePassword = (e) => {
     setPassword(e.target.value);
   };
-
-  const changePhone = (e) => {
-    setPhone(e.target.value);
-  };
+  
 
   return (
     <div className={styles.login}>
@@ -34,20 +33,31 @@ const login = () => {
         </div>
         <form className={styles.inputs}>
           <div className={styles.group}>
-            <input required="" type="text" className={styles.input}/>
+            <input 
+            required="" 
+            type="text" 
+            className={styles.input} 
+            value={email} 
+            onChange={changeEmail}/>
             <span className={styles.highlight}></span>
             <span className={styles.bar}></span>
             <label>Email</label>
           </div>
           <div className={styles.group}>
-            <input required="" type="text" className={styles.input}/>
+            <input 
+            required="" 
+            type="password" 
+            className={styles.input} 
+            value={password} 
+            onChange={changePassword} 
+            />
             <span className={styles.highlight}></span>
             <span className={styles.bar}></span>
             <label>Password</label>
           </div>
         </form>
         <div className={styles.btn}>
-          <button>Log in</button>
+          <button onClick={handleSigning}>Log in</button>
         </div>
       </div>
     </div>
