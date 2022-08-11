@@ -6,7 +6,6 @@ import styles from "../styles/Register.module.css";
 import { registration } from "../features/userSlice";
 
 const register = () => {
-  // const dispatch = useDispatch()
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -20,7 +19,6 @@ const register = () => {
   const dispatch = useDispatch();
 
   const handleRegister = () => {
-    console.log(name, surname, email, phone, password)
     dispatch(registration({ email, password, role, phone, name, surname, driversLicense }));
     setName("");
     setSurname("");
@@ -30,6 +28,7 @@ const register = () => {
     setRole('');
     setDriversLicense(null)
   };
+  
 
   const changeName = (e) => {
     setName(e.target.value);
@@ -64,6 +63,7 @@ const register = () => {
     }
   };
 
+  
   return (
     <div className={styles.login}>
       <div className={styles.login_block}>
@@ -138,6 +138,7 @@ const register = () => {
             value={driversLicense} 
             onChange={(e) => changeDriversLicense(e)} 
             />
+            <label>Номер водительского удостоверения</label>
           </div> 
           :
           null}

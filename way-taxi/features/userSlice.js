@@ -1,3 +1,4 @@
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useEffect } from "react";
@@ -12,6 +13,7 @@ const initialState = {
   token: null,
   email: null,
   isActivated: null,
+  role: null, 
 };
 
 export const registration = createAsyncThunk(
@@ -60,18 +62,20 @@ export const logining = createAsyncThunk(
     try {
       const response = await axios.post(
         "http://localhost:4000/login",
-        { email, password },
-        axiosConfig1
+        { email, password }
       );
+      const data = await response.data
       if (data.message) {
+        console.log(data)
         return thunkAPI.rejectWithValue(data.message);
-      } else {
-        localStorage.setItem("isActivated", data?.user?.isActivated);
+      } 
+        localStorage.setItem("isActivated", data?.user.isActivated);
         localStorage.setItem("user", data.user.id);
         localStorage.setItem("email", data.user.email);
         localStorage.setItem("token", data.accessToken);
-        return thunkAPI.fulfillWithValue(response.data);
-      }
+        localStorage.setItem("role", data.user.role)
+        return thunkAPI.fulfillWithValue(data);
+      
     } catch (error) {
       thunkAPI.rejectWithValue(error.message);
     }
@@ -145,3 +149,4 @@ export const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
+
