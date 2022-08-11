@@ -1,13 +1,67 @@
-.container {
-  padding: 0 2rem;
-}
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  width: calc(100% - 32px);
+  margin: auto;
+}
+
+
+.marker {
+  width: 20%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  height: 20%;
+}
+
+.sidebar {
+  border-radius: 5rem;
+  width: 30%;
+  background-color: whitesmoke;
+}
+
+.location {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.where_wherever label {
+  position: absolute;
+  font-size: 0.8rem;
+  left: 6.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.where_wherever {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.where_wherever input {
+  font-size: 1.3rem;
+  width: 65%;
+  border-top: none;
+  background: none;
+  border-bottom: 0.5px solid black;
+  border-left: none;
+  border-right: none;
+}
+
+.where_wherever input:focus {
+  outline: none;
+}
+
+
+.econom {
+  width: 100%;
+  
+  flex-direction: column;
 }

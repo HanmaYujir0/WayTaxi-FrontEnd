@@ -1,7 +1,10 @@
 .header{
     width: 100%;
     background-color: #fff;
+    border-radius: 1rem;
+    margin: 1.5rem auto;
     display: flex;
+    width: calc(100% - 32px);
     justify-content: space-around;
     align-items: center;
 }

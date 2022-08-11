@@ -1,0 +1,61 @@
+.raiting_main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.raiting_block {
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    display: flex;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+}
+
+.raiting_main h1 {
+    margin: 0.5rem auto;
+    font-weight: 300;
+}
+
+
+.stars_block {
+    background-color: white;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin: 1rem auto;
+    justify-content: space-around;
+}
+
+.stars_block span {
+    font-size: 1.5rem;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    margin: 1rem 0rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button {
+    width: 35%;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    border-radius: 0.5rem;
+    justify-content: center;
+    border: none;
+    height: 2rem;
+    background-color: orange;
+}

@@ -91,7 +91,6 @@ if (typeof window !== "undefined") {
     isActivated: localStorage.getItem("isActivated"),
   };
 }
-console.log(object.usdfs);
 
 
 export const userSlice = createSlice({
