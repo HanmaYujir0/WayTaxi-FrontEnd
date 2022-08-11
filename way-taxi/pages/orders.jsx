@@ -14,21 +14,24 @@ const orders = () => {
 
 
   return (
-    <div className={styles.orderTest}>
-      <div className={styles.ordersMain}>
-        {orders.map((item, id) => {
-          return (
-            <div className={styles.ordersList} key={id}>
-              <div className={styles.orderTitle}>Поездка в {item.wherever}</div>
-              <div className={styles.orderWere}>{item.where}</div>
-              <div className={styles.orderWerever}>{item.wherever}</div>
-              <div className={styles.orderPrice}>{item.price}</div>
-            </div>
-          );
-        })}
-      </div>
+    <div className={styles.order_main}>
+        <div>
+            
+        </div>
     </div>
   );
 };
 
 export default orders;
+
+
+// {orders.map((item, id) => {
+//     return (
+//       <div className={styles.ordersList} key={id}>
+//         <div className={styles.orderTitle}>Поездка в {item.wherever}</div>
+//         <div className={styles.orderWere}>{item.where}</div>
+//         <div className={styles.orderWerever}>{item.wherever}</div>
+//         <div className={styles.orderPrice}>{item.price}</div>
+//       </div>
+//     );
+//   })}

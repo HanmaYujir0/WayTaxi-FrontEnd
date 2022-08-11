@@ -96,6 +96,7 @@ if (typeof window !== "undefined") {
   };
 }
 
+
 export const userSlice = createSlice({
   name: "users/loginAndRegister",
   initialState,

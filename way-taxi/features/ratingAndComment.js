@@ -4,20 +4,29 @@ import axios from "axios";
 export const ratingPost = createAsyncThunk("rating/post", async ({taxi, star}, thunkAPI) => {
     try {
         const response = await axios.patch(`http://localhost:4000/users/rating/${taxi.taxiId}`, {star})
-        console.log(response.data)
         return response.data
     } catch (error) {
         thunkAPI.rejectWithValue(error.message)
     }
 });
 
-export const commentPost = createAsyncThunk("comments/post", async (_, thunkAPI) => {
+
+export const getRating = createAsyncThunk("rating/get", async (user, thunkAPI) => {
     try {
-        const response = await axios.post("http://localhost:4000/")
+        const response = await axios.get(`http://localhost:4000/users/rating/${user.userId}`)
+        return response.data
     } catch (error) {
-        
+        thunkAPI.rejectWithValue(error.message)
     }
 })
+
+// export const commentPost = createAsyncThunk("comments/post", async (_, thunkAPI) => {
+//     try {
+//         const response = await axios.post("http://localhost:4000/")
+//     } catch (error) {
+        
+//     }
+// })
 //k'dkvfkv'dfk'pdf'vd'fv'df
 
 export const ratingAndCommnet = createSlice({
@@ -30,7 +39,10 @@ export const ratingAndCommnet = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(ratingPost.fulfilled, (state, action) => {
-            state.rating = action.payload.rating
+            state.rating = action.payload
+        })
+        builder.addCase(getRating.fulfilled, (state, action) => {
+            state.rating = action.payload
         })
     }
 })
