@@ -13,6 +13,17 @@ export const FetchOrders = createAsyncThunk(
   }
 );
 
+export const PostOrders = createAsyncThunk(
+  "orders/post",
+  async ({ from, to }, thunkAPI) => {
+    try {
+      
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message)
+    }
+  }
+)
+
 export const ordersSlice = createSlice({
   name: "orders",
   initialState: {
