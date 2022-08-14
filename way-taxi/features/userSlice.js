@@ -3,14 +3,24 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useEffect } from "react";
 
+let object = {};
+
+if (typeof window !== "undefined") {
+  object = {
+    users: localStorage.getItem("user"),
+    token: localStorage.getItem("token"),
+    email: localStorage.getItem("email"),
+    isActivated: localStorage.getItem("isActivated"),
+  };
+}
 
 const initialState = {
   signingUp: false,
   signingIn: false,
   error: null,
   loading: false,
-  user: null,
-  token: null,
+  user: object.users,
+  token: object.token,
   email: null,
   isActivated: null,
   role: null, 
@@ -85,16 +95,6 @@ export const logining = createAsyncThunk(
 export const logout = createAsyncThunk("user/logout", async (_, thunkAPI) => {
   localStorage.clear();
 });
-let object = {};
-
-if (typeof window !== "undefined") {
-  object = {
-    users: localStorage.getItem("user"),
-    token: localStorage.getItem("token"),
-    email: localStorage.getItem("email"),
-    isActivated: localStorage.getItem("isActivated"),
-  };
-}
 
 
 export const userSlice = createSlice({

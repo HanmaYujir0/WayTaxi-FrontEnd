@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <main className={styles.main}>
-        <div className={styles.sidebar}>
+        {/* <div className={styles.sidebar}>
           <div className={styles.location}>
             <div className={styles.where_wherever}>
               <div className={styles.marker}>
@@ -39,7 +39,7 @@ export default function Home() {
           <div className={styles.comments_driver}></div>
           <div className={styles.animals}></div>
           <div className={styles.baby_chair}></div>
-        </div>
+        </div> */}
       </main>
     </>
   );

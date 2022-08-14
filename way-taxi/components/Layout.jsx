@@ -1,8 +1,7 @@
 import styles from "../styles/Layout.module.css";
-import Head from 'next/head'
+import Head from "next/head";
 import Navbar from "./Navbar";
-import Map from "./Map"
-
+import Map from "./Map";
 
 const Layout = ({ children }) => {
   return (
@@ -13,13 +12,12 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={styles.navbarMain}>
-      <Navbar />
-      {/* {children} */}
+        <Navbar />
+        {children}
       </div>
       <div className={styles.map}>
-      <Map />
+        <Map />
       </div>
-
     </div>
   );
 };
