@@ -22,6 +22,7 @@ import {
 } from "@pbe/react-yandex-maps";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { PostOrders } from "../features/ordersSlice";
 const key = "5a366661-4a98-4523-b0cf-8c1297e63194";
 
 export default function Home() {
@@ -44,6 +45,12 @@ export default function Home() {
   const order = { from: "Grozny", to: "Argun" };
   console.log(1234);
 
+  const orderHandleClick = () => {
+      alert("блядь")
+      dispatch(PostOrders({from, to}))
+      console.log(from, to)
+  }
+
   return (
     <div className={styles.map}>
       <Head>
@@ -59,6 +66,11 @@ export default function Home() {
           <h1>{route.from}</h1>
         </div>
       ) : null}
+            <div className={styles.btn}>
+        <button onClick={() => orderHandleClick()}>
+          Оформить заказ
+        </button>
+      </div>
 
       <YMaps query={{ apikey: key }}>
         <Map
